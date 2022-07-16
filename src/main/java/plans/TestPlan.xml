@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "TestPlan" parallel="tests" thread-count="1" verbose="1">
+
+ <parameter name="baseURL" value="https://api.tmsandbox.co.nz/" />
+ 
+   <test name = "TC1_VarifyDetailsEndpoint">
+      <classes>
+         <class name = "tests.TC1_VarifyDetailsEndpoint" />
+      </classes>
+   </test>
+
+
+   
+</suite>	
