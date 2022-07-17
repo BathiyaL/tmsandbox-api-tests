@@ -4,9 +4,9 @@
 
  <parameter name="baseURL" value="https://api.tmsandbox.co.nz/" />
  
-   <test name = "TC1_VarifyDetailsEndpoint">
+   <test name = "TC1_ValidateDetailsEndpoint">
       <classes>
-         <class name = "tests.TC1_VarifyDetailsEndpoint" />
+         <class name = "tests.TC1_ValidateDetailsEndpoint" />
       </classes>
    </test>
 

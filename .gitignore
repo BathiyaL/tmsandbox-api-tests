@@ -9,12 +9,14 @@ gradle-app.setting
 !gradle-wrapper.jar
 
 **/target
+**/test-output
 *.project
 *.classpath
 *.settings
 *bin
 *debug.log
 *.idea
+test-output/
 
 ### Gradle ###
 .gradle

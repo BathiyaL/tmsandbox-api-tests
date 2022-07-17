@@ -7,7 +7,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import constants.APIEndPoints;
+import constants.ProgramConstants;
 
+/*
+ * @Author : Bathiya L
+ * All tests extends BaseTest class.
+ * Functionalities that common to all tests classes can implement here
+ */
 public class BaseTest {
 	
 	protected URI baseURL;
@@ -18,13 +24,18 @@ public class BaseTest {
 		logger.info(logMessage);
 	}
 	
-	protected void bindBaseURL(String baseurlParm) throws URISyntaxException {		
-		if(baseurlParm.isEmpty() || baseurlParm.contains("param-val-not-found")) {
+	/*
+	 * @Author : Bathiya L
+	 * @Paremeter : baseurlParameter
+	 * If base url empty, Null, or not passed from xml Test Plan, this will use the defined default URL
+	 */
+	protected void bindBaseURL(String baseurlParameter) throws URISyntaxException {		
+		if(baseurlParameter==null || baseurlParameter.isEmpty() || baseurlParameter.contains(ProgramConstants.TESTNG_PARM_VALUE_NOT_FOUND_MSG)) {
 			baseURL = new URI(APIEndPoints.DEFAULT_BASE_URL);
-			log("baseURL parameter values is null hence bind to the default base url");
+			log("baseURL parameter values is null, empty or not passed from a Test Plan hence bind to the default base url");
 		} else {
-			baseURL = new URI(baseurlParm);		
-		}		
+			baseURL = new URI(baseurlParameter);
+		}
 		log("Base URL : " + baseURL);
 	}
 
